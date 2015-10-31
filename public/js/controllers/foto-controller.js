@@ -1,5 +1,5 @@
 angular.module('alurapic')
-	.controller('FotoController', function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
+	.controller('FotoController', ["$scope", "recursoFoto", "$routeParams", "cadastroDeFotos", function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
 
 		$scope.foto = {};
 		$scope.mensagem = '';
@@ -20,10 +20,11 @@ angular.module('alurapic')
 				.then(function(dados) {
 					$scope.mensagem = dados.mensagem;
 					if (dados.inclusao) $scope.foto = {};
+					//$scope.$broadcast('fotoCadastrada');
 				})
 				.catch(function(erro) {
 					$scope.mensagem = erro.mensagem;
 				});
 			}
 		};
-	});
+	}]);
