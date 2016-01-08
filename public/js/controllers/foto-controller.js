@@ -1,4 +1,4 @@
-angular.module('alurapic')
+angular.module('eliseu-slacker')
 	.controller('FotoController', ["$scope", "recursoFoto", "$routeParams", "cadastroDeFotos", function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
 
 		$scope.foto = {};
